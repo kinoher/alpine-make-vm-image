@@ -32,3 +32,12 @@ rc-update add crond default
 rc-update add net.eth0 default
 rc-update add net.lo boot
 rc-update add termencoding boot
+rc-update add zerotier-one default
+rc-update add openssh default
+
+adduser -D kino
+mkdir /home/kino/.ssh/
+
+echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIADUOFeKITEnRKIlW1m7zur5iFYpkCUq1G2uR/CdKB0d" /home/kino/.ssh/authorized_keys 
+chmod 600  /home/kino/.ssh/authorized_keys 
+chown -R kino:kino  /home/kino/.ssh
